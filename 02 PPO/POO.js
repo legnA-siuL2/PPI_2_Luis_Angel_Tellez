@@ -1,4 +1,4 @@
-// Definición de la clase principal Aviones
+// Definición de la clase principal Aviones con 3 atributos
 class Aviones {
   constructor(modelo, capacidadPasajeros, velocidadMaxima) {
     this.modelo = modelo;
@@ -6,18 +6,27 @@ class Aviones {
     this.velocidadMaxima = velocidadMaxima;
   }
 
-  // Metodo 1
+// Se le agregan 2 metodos a la clase principal, se dejan con console.log para ver los resultados en consola
   despegar() {
-    console.log(`El avión ${this.modelo} está despegando.`);
-     }
+    console.log("El avión " + this.modelo + " con capacidad para " + this.capacidadPasajeros + " pasajeros está despegando y pronto alcanzará una velocidad de " + this.velocidadMaxima);
+  }
 
-  // Metodo 2
   aterrizar() {
-    console.log(`El avión ${this.modelo} está aterrizando.`);
+    console.log("El avión " + this.modelo + " con capacidad para " + this.capacidadPasajeros + " pasajeros está aterrizando despues de volar a una velocidad de " + this.velocidadMaxima);
   }
 }
 
-// Herencia 1: AvionComercial hereda de Aviones
+const aeroplano = new Aviones ('avion01', 10 , '100Km/h');
+const biplano = new Aviones ('avion02', 20 , '200Km/h');
+
+aeroplano.despegar()
+aeroplano.aterrizar()
+
+biplano.despegar()
+biplano.aterrizar()
+
+
+// Herencia 1: AvionComercial hereda de Aviones con un atributo adicional (aerolinea)
 class AvionComercial extends Aviones {
   constructor(modelo, capacidadPasajeros, velocidadMaxima, aerolinea) {
     super(modelo, capacidadPasajeros, velocidadMaxima);
@@ -25,56 +34,63 @@ class AvionComercial extends Aviones {
   }
 
   // Metodo específico de AvionComercial
-  ofrecerServicio() {
-    console.log(`Bienvenidos a bordo de ${this.aerolinea}.`);
+  rutaComercial() {
+    console.log("El avión " + this.modelo + " con capacidad para " + this.capacidadPasajeros + " pasajeros alcanza una velocidad max de " + this.velocidadMaxima + " avion insignia de la aerolinea " + this.aerolinea);
   }
 }
 
-// Herencia 2: AvionCarga hereda de Aviones
+const comercial01 = new AvionComercial ('comercial01', 150 , '400Km/h', 'Vuela con Legna');
+
+comercial01.rutaComercial()
+
+// Herencia 2: AvionCarga hereda de Aviones con un atributo adicional (Capacidad de carga)
 class AvionCarga extends Aviones {
-  constructor(modelo, capacidadPasajeros, velocidadMaxima, capacidadCarga) {
-    super(modelo, capacidadPasajeros, velocidadMaxima);
+  constructor(modelo, velocidadMaxima, capacidadCarga) {
+    super(modelo, 0, velocidadMaxima);
     this.capacidadCarga = capacidadCarga;
   }
 
   // Metodo específico de AvionCarga
   cargarMercancia() {
-    console.log(`Cargando ${this.capacidadCarga} toneladas de mercancía.`);
-  }
+    console.log("El avión " + this.modelo + " no puede cargar pasajeros" + " pero tiene un limite de carga de " + this.capacidadCarga + " alcanzando una velocidad max de " + this.velocidadMaxima);
+ }
 }
 
-// Herencia 3: AvionDeCombate hereda de Aviones
-class AvionDeCombate extends Aviones {
+const carga01 = new AvionCarga ('carga01', '400Km/h', '2000Kg');
+
+carga01.cargarMercancia()
+
+// Herencia 3: AvionDeCombate hereda de Aviones con un atributo adicional (armamento)
+class AvionCombate extends Aviones {
   constructor(modelo, capacidadPasajeros, velocidadMaxima, armamento) {
     super(modelo, capacidadPasajeros, velocidadMaxima);
     this.armamento = armamento;
   }
 
   // Metodo específico de AvionDeCombate
-  atacar() {
-    console.log(`¡Objetivo eliminado con ${this.armamento}!`);
+  armas() {
+    console.log("El avión especial de combate " + this.modelo + " tiene un impresionante armamento de " + this.armamento + " pudiendo llevar hasta " + this.capacidadPasajeros + " pasajeros y alcanzando una velocidad max de " + this.velocidadMaxima);
   }
 }
 
-// Crear instancias de cada tipo de avión
-const avionComercial = new AvionComercial('Boeing 747', 300, 900, 'AirlineXYZ');
-const avionCarga = new AvionCarga('Cargomaster 200', 2, 800, 5000);
-const avionDeCombate = new AvionDeCombate('F-22 Raptor', 1, 2500, 'misiles');
+const combate01 = new AvionCombate ('Legna2126', 2, '2500Km/h', 'misiles termo-nucleares');
 
-// Llamada a metodos y uso del polimorfismo
-avionComercial.despegar();
-avionCarga.aterrizar(); // Uso del metodo heredado de Aviones
-avionDeCombate.atacar();
+combate01.armas()
 
-// Uso del polimorfismo llamando al método específico de cada subclase a través de la referencia de la clase principal
-const flota = [avionComercial, avionCarga, avionDeCombate];
-flota.forEach(avion => {
-  avion.despegar();
-  if (avion instanceof AvionComercial) {
-    avion.ofrecerServicio();
-  } else if (avion instanceof AvionCarga) {
-    avion.cargarMercancia();
-  } else if (avion instanceof AvionDeCombate) {
-    avion.atacar();
+// Crear polimorfismos
+
+class AvionPolimorfico extends AvionCombate {
+  constructor(modelo, capacidadPasajeros, velocidadMaxima, armamento, accion) {
+    super(modelo, capacidadPasajeros, velocidadMaxima, armamento);
+    this.accion = accion;
   }
-});
+
+  despegar() {
+    console.log("la nave " + this.modelo + " está despegando pero de forma vertical al alcanzar su altura maxima podrá " + this.accion + " con su armamento de " + this.armamento);
+  }
+}
+
+const helicoptero01 = new AvionPolimorfico ('Helicoptero01', 0,'700 Km/H', 'misiles de gravedad', 'atacar')
+
+helicoptero01.despegar()
+
