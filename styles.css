@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+nav a, button {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    background-color: #777;
+    cursor: pointer;
+}
+
+.text-btn {
+    font-size: 12px; 
+    padding: 0px 10px; 
+    margin: 0 0px; 
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+ol {
+    text-align: left;
+    list-style: none;
+    counter-reset: section;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+li:before {
+    content: counter(section) ". ";
+    counter-increment: section;
+    font-weight: bold; 
+    display: inline-block; 
+    width: 1em; 
+    margin-right: 5px; 
+}
