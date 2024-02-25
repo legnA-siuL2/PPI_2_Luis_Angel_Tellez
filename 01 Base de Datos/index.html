@@ -12,14 +12,28 @@
     </header>
     <main>
         <ol>
-            <li>Teniendo en cuenta el archivo <button class="text-btn">Model</button></li>
-            <li>Descripción del segundo punto</li>
-            <li>Descripción del tercer punto</li>
-            <li>Descripción del cuarto punto</li>
+            <li>
+                Teniendo en cuenta el archivo <a href="/01 Base de Datos/model.pdf" target="_blank" class="text-link">Model</a>, se crea la base de datos solicitada, con enfoque en un negocio de venta de videojuegos en línea similar a Steam.
+            </li>
+            <li>
+                Después de analizar la base de datos, se realizaron dos cambios en el modelo:
+                <ul>
+                    <li>En la tabla "tb_usuarios" se quitó la columna "Rol" debido a la existencia de la tabla intermedia "tb_usuario_rol".</li>
+                    <li>Se creó la tabla "tb_medios_pago" para gestionar los medios de pago en la tabla "tb_pedido".</li>
+                </ul>
+                Esto modificó el esquema inicial, generado mediante Workbench: <a href="/01 Base de Datos/BD Esquema 3 Workbench.pdf" target="_blank" class="text-link">Esquema nuevo</a>.
+                Probando distintos gestores de bases de datos, se crearon también estos dos esquemas:
+                <ul>
+                    <li>DBeaver <a href="/01 Base de Datos/BD esquema 1 DBeaver.pdf" target="_blank" class="text-link">Esquema DBeaver</a></li>
+                    <li>PHPMyAdmin <a href="/01 Base de Datos/BD Esquema 2 PHPMyAdmin.pdf" target="_blank" class="text-link">Esquema PHPMyAdmin</a></li>
+                </ul>
+            </li>
+            <li>Se pobló la base de datos considerando el negocio de venta de videojuegos.</li>
+            <li>Se adjunta lo solicitado ===> <a href="/01 Base de Datos/ppi_2_games.sql" target="_blank" class="text-link">Script BD</a></li>
         </ol>
     </main>
     <footer>
-        <p>&copy; 2024 Luis Angel Tellez Rojas - Para Enyoi.co</p>
+        <p>&copy; 2024 Luis Ángel Téllez Rojas - Para Enyoi.co</p>
     </footer>
 </body>
 </html>

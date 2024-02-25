@@ -26,13 +26,19 @@ nav a, button {
     background-color: #777;
     cursor: pointer;
 }
-
-.text-btn {
+.text-link{
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    background-color: #777;
+    cursor: pointer;
     font-size: 12px; 
     padding: 0px 10px; 
     margin: 0 0px; 
+    border: 1px solid black;
 }
-
 footer {
     background-color: #333;
     color: white;
@@ -44,19 +50,14 @@ footer {
 
 ol {
     text-align: left;
-    list-style: none;
     counter-reset: section;
+
 }
 
 li {
     margin-bottom: 10px;
+    margin-top: 15px; /* Agregado margen superior */
+    margin-bottom: 10px; /* Agregado margen inferior */
 }
 
-li:before {
-    content: counter(section) ". ";
-    counter-increment: section;
-    font-weight: bold; 
-    display: inline-block; 
-    width: 1em; 
-    margin-right: 5px; 
-}
+
