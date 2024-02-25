@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesGC.css">
+    <script src="script.js" defer></script>
+    <title>Gestión del Cliente</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Gestión del Cliente</div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Biblioteca</a></li>
+                <li><a href="#">Tienda</a></li>
+                <li><a href="#">Comunidad</a></li>
+                <li><a href="#">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="user-form">
+            <h2>Registro de Usuarios</h2>
+            <form id="user-form">
+                <!-- Contenido del formulario -->
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" required min="0">
+
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="genero">Género de Videojuegos Favorito:</label>
+                <select id="genero" name="genero">
+                    <option value="RTS">RTS</option>
+                    <option value="Shooter">Shooter</option>
+                    <option value="Deportes">Deportes</option>
+                    <option value="TBS">TBS</option>
+                    <option value="Conduccion">Conducción</option>
+                    <option value="Arcade">Arcade</option>
+                    <option value="De mesa">De mesa</option>
+                </select>
+
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+
+                <button type="submit" id="botonGuardar">Guardar</button>
+            </form>
+        </section>
+
+        <section class="user-table">
+            <h2>Tabla de Usuarios</h2>
+            <table id="userTable">
+                <!-- Contenido de la tabla -->
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Correo Electrónico</th>
+                        <th>Género Favorito</th>
+                        <th>Contraseña</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- Agrega esta línea -->
+                    <!-- Filas de usuarios -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gestión del Cliente</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Añadimos altura mínima al cuerpo para evitar que las filas queden detrás del footer */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #171a21;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    flex: 1; /* Hacemos que el área principal ocupe el espacio disponible en la ventana */
+    padding: 20px;
+}
+
+h2 {
+    color: #171a21;
+}
+
+footer {
+    background-color: #171a21;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.user-form {
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 20px; /* Añadimos margen inferior para separar del siguiente elemento */
+}
+
+.user-form input,
+.user-form select,
+.user-form button {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.user-form button {
+    background-color: #171a21;
+    color: white;
+    cursor: pointer;
+}
+
+.user-form button:hover {
+    background-color: #0d1015;
+}
+
+.user-table {
+    width: 100%;
+    overflow-x: auto; /* Agregamos scroll horizontal si es necesario */
+}
+
+.user-table th, .user-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}

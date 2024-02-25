@@ -20,6 +20,16 @@ label {
     margin-bottom: 5px;
 }
 
+/* Contenedor para el campo de usuario */
+#username-container {
+    position: relative;
+}
+
+/* Contenedor para el campo de contraseña */
+#password-container {
+    position: relative;
+}
+
 input {
     width: 100%;
     padding: 8px;
@@ -57,4 +67,34 @@ button:hover {
 
 .success {
     background-color: #4CAF50;
+}
+
+/* Pseudo-elemento ::before para el campo de usuario */
+#username-container::before {
+    content: "El usuario es Legna";
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: -25px;
+}
+
+/* Pseudo-elemento ::before para el campo de contraseña */
+#password-container::before {
+    content: "la contraseña es contraseña";
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: -25px;
+}
+
+/* Mostrar el mensaje de ayuda cuando el campo está enfocado */
+#username-container:focus-within::before,
+#password-container:focus-within::before {
+    display: inline-block;
 }
